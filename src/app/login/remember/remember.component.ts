@@ -1,4 +1,6 @@
+import { isDefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-remember',
@@ -8,8 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class RememberComponent implements OnInit {
 
   constructor() { }
-
+  toggleButtonName = "Hide Button";
+  isDisplay = true;
   ngOnInit(): void {
   }
 
+  toggleRemember(flag: boolean) {
+
+    this.isDisplay = !flag;
+
+    if (!flag) {
+      this.toggleButtonName = "Hide Button";
+      $(".remember-item").show();
+    } else {
+      this.toggleButtonName = "Show Button";
+      $(".remember-item").hide();
+    }
+
+    
+  }
 }

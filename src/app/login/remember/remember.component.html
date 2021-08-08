@@ -1,1 +1,6 @@
-<p>remember works!</p>
+<div class="form-group remember-item" >
+    <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label>
+</div>
+<div class="form-group">
+    <button type="button" name="submit" (click)="toggleRemember(isDisplay)" class="btn btn-info btn-md">{{ toggleButtonName }}</button>
+</div>
